@@ -1,0 +1,32 @@
+<mat-card>
+  <form (submit)="onSaveShoping(shopForm)" #shopForm="ngForm">
+<!--<form (submit)="onSaveShoping(shoppostForm)" #postForm="ngForm">-->
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="parit"
+        [ngModel]="shoping.parit"
+        required
+        minlength="3"
+        placeholder="parit name"
+        #parit="ngModel"></textarea>
+      <mat-error *ngIf="parit.invalid">Please enter a parit.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="number"
+        [ngModel]="shoping.number"
+        required
+        placeholder="number parit"
+        #number="ngModel">
+      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Save shoping</button>
+  </form>
+</mat-card>
